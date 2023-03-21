@@ -1,9 +1,11 @@
 #include <stdio.h>
 
 /**
- * main -  finds and prints the sum of the even-valued terms
+ * main - finds and prints the sum of the even-valued
+ * terms in Fibonacci seqeunce
+ * whose value does not exceed  4,000,000
  *
- * Return Always 0
+ * Return Always 0 (Success)
  */
 
 int main(void)
@@ -19,7 +21,7 @@ int main(void)
 	b = c;
 	}
 
-	printf("%d\n", sum);
+	printf("%ld\n", sum);
 
 	return (0);
 }
