@@ -5,7 +5,7 @@
  * terms in Fibonacci seqeunce
  * whose value does not exceed  4,000,000
  *
- * Return Always 0 (Success)
+ * Return: Always 0 (Success)
  */
 
 int main(void)
