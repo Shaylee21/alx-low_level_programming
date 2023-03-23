@@ -3,18 +3,22 @@
 /**
  * print_most_numbers - prints the numbers since 0 up to 9
  * Description - prints the numbers excluding 2 and 4
- * Return: the numbers 0 up to 9
+ * Return: the numbers since 0 up to 9
  */
 
 void print_most_numbers(void)
 {
-	int i;
+	int x;
 
-	for (i = 0; i < 10; i++)
+	for (; x <= 9; x++)
 	{
-	if (i != 2 && i != 4)
+	if (x == 2 || x == 4)
 	{
-	_putchar('0' + i);
+	continue;
+	}
+	else
+	{
+	_putchar(x + '0');
 	}
 	}
 	_putchar('\n');
