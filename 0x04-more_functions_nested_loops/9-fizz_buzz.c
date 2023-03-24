@@ -1,36 +1,37 @@
 #include <stdio.h>
 
 /**
- * main - check the code
+ * main - prints Fizz Buzz
+ *
  * Return: void
  */
 int main(void)
 {
-	int i = 1;
+	int x = 1;
 
-	while (i <= 100)
+	while (x <= 100)
 	{
-		if (i % 3 == 0 && i % 5 == 0)
+		if (x % 3 == 0 && x % 5 == 0)
 		{
 			printf("FizzBuzz");
 		}
-		else if (i % 3 == 0)
+		else if (x % 3 == 0)
 		{
 			printf("Fizz");
 		}
-		else if (i % 5 == 0)
+		else if (x % 5 == 0)
 		{
 			printf("Buzz");
 		}
 		else
 		{
-			printf("%i", i);
+			printf("%i", x);
 		}
-		if (i != 100)
+		if (x != 100)
 		{
 			putchar(' ');
 		}
-		i++;
+		x++;
 	}
 	putchar('\n');
 
