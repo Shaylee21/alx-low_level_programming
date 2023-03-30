@@ -1,16 +1,48 @@
 #include "main.h"
 
 /**
- * infinite_add - Adds two positive numbers.
- * @n1: A pointer to the first number as a string.
- * @n2: A pointer to the second number as a string.
- * @r: A pointer to the buffer where the results will be stored.
- * @size_r: The size of the buffer @r.
+ * infinite_add -Adds up two numbers
+ * @n1: first number
+ * @n2: second number
+ * @r: buffer for result
+ * @size_r: buffer size
  *
- * Return: If the sum can be stored in @r, a pointer to the buffer @r.
- * otherwise, return 0.
+ * Return: address of r or 0
  */
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
+	int i, j, k, l, m, n;
 
+	for (i = 0; n1[i]; i++)
+	for (j = 0; n2[j]; j++)
+		;
+	if (i > size_r || j > size_r)
+		return (0);
+	m = 0;
+	for (i -= 1, j -= 1, k = 0; k < size_r - 1; i--, j--, k++)
+	{
+	n = m;
+	if (i >= 0)
+	n += n1[i] - '0';
+	if (j >= 0)
+	n += n2[j] - '0';
+	if (i < 0 && j < 0 && n == 0)
+	{
+	break;
+	}
+	m = n / 10;
+	r[k] = n % 10 + '0';
+	}
+	r[k] = '\0';
+	if (i >= 0 || j >= 0 || m)
+	return (0);
+	for (k -= 1, l = 0; l < k; k--, l++)
+	{
+	m = r[k];
+	r[k] = r[l];
+	r[l] = m;
+	}
+
+	return (r);
+}
