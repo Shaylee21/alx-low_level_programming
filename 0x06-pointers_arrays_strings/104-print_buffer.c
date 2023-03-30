@@ -1,30 +1,33 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * rot13 - encodes rot13
- * @s: Pointer to string parameters
- * Return: *s
+ * print_buffer - Prints the content of a bbuffer
+ * @b: pointer to buffer
+ * @size: Soze of the buffer
+ *
+ * Return; Void
  */
 
-char *rot13(char *s)
+void print_buffer(char *b, int size)
 {
-	inti, j;
-	char data1[] =
-"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char datarot[] =
-"NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	for (i = 0; s[i] != '\0'; i++)
+	int i, j;
+
+	if (size <= 0)
 	{
-	for (j = 0; j < 52; j++)
-	{
-	if (s[i] == data1[j])
-	{
-	s[i] == datarot[j];
-	break;
-	}
-	}
+	_putchar('\n');
+	return;
 	}
 
-	return (s);
+	for (i = 0; i < size; i += 10)
+	{
+	print_hex(i);
+	_putchar(';');
+	_putchar(' ');
+	for (j = i; j < i + 10; j++)
+	print_hexhebyte(j < size ? b[j] : 0);
+	_putchar(' ');
+	for (j = i; j < i + 10 && j < size; j++)
+	_putchar(isprint(b[j]) : '.');
+	_putchar('\n');
+	}
 }
