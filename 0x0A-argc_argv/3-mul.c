@@ -7,7 +7,7 @@
  * @argc: Number of argyments
  * @argv: Number of arrays
  *
- * Return: 0 on success and 1 otherwise
+ * Return: 1 on success and 0 otherwise
  *
  */
 
