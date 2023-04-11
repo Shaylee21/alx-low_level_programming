@@ -16,9 +16,9 @@ char *_strdup(char *str)
 	char *a_str;
 	unsigned int x, a;
 
-	if (str == 0)
+	if (str == NULL)
 
-	return (0);
+	return (NULL);
 
 	x = 0;
 	while (str[x] != '\0')
@@ -26,9 +26,9 @@ char *_strdup(char *str)
 
 	a_str = malloc(sizeof(char) * (x + 1));
 
-	if (str == 0)
+	if (str == NULL)
 
-	return (0);
+	return (NULL);
 
 	for (a = 0; a <= x; a++)
 	a_str[a] = str[a];
