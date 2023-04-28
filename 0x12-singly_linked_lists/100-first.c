@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+void print_m(void) __attribute__ ((constructor));
+
 /**
  * print_m - Prints a message
  */
