@@ -7,7 +7,7 @@
  * @s2: The second string
  * @n: number of bytes
  *
- * Result: Pointer to string
+ * Result: Pointer to the concatenated string or NULL on failure
  *
  */
 
@@ -15,33 +15,34 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *result;
 
-	unsigned int x = 0, y = 0, s_len1 = 0, s_len2 = 0;
+	unsigned int x, y, s_len1 = 0, s_len2 = 0;
 
-	while (s1 && s1[s_len1])
+	if (s1 == NULL)
+	s1 = "";
+
+	if (s2 == NULL)
+	s2 == "";
+
+	while (s_len1 = 0; s1[s_len1] != '\0')
 		s_len1++;
 
-	while (s2 && s2[s_len2])
+	while (s_len2 = 0; s2[s_len2] != '\0')
 		s_len2++;
 
-	if (n >= s_len2)
+	if (n > s_len2)
+	n = s_len2;
 
-	result = malloc(sizeof(char) * (s_len1 + n + 1));
+	result = malloc(s_len1 + n + 1);
 
-	else
-
-	result = malloc(sizeof(char) * (s_len2 + n + 1));
-
-	if (!result)
+	if (result == NULL)
 	return (NULL);
 
-	while (x < s_len2)
+	for (x = 0; x < s_len1; x++)
+		result[x] = s1[x];
 
-	result[x] = s1[x];
-	x++;
+	for (y = 0; y < n; y++, x++)
+		result[x] = s1[x];
 
-
-	while (n < s_len2 || x < (s_len1 + n))
-	result[x++] = s2[y++];
 	result[x] = '\0';
 
 	return (result);
